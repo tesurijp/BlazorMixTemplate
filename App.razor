@@ -1,0 +1,13 @@
+﻿<Router AppAssembly="@Asm">
+    <NotFoundContent>
+        <p>Sorry, there's nothing at this address.</p>
+    </NotFoundContent>
+</Router>
+
+@code {
+#if SERVER_MODE
+    private System.Reflection.Assembly Asm => typeof(Startup).Assembly;
+#else
+    private System.Reflection.Assembly Asm => typeof(Program).Assembly;
+#endif
+}
