@@ -2,7 +2,7 @@
 
 ## これは何
 
-BlazorClientとBlazorClientの共通テンプレート  
+BlazorClientとBlazorServerの共通テンプレート  
 preview8 時点の両方のテンプレートの機能をまとめ、それぞれのプロジェクトファイルを開くことで ServerとClientを切り替えて実行できる。  
 ファイルは共通だがServerとClientでの処理の差分を #if で切り替えられるよう差分を整理したもの
 
@@ -28,7 +28,8 @@ Blazor.webassembly.js と blazor.server.js の差異などがある。
 * Pages/_Host.cshtml
 
 これらはClientのプロジェクトファイルから除外対象にしておく。  
-Server 側で index.htmlはあっても悪さはしないが、気になるなら除外対象にする。
+Server 側で index.htmlはあっても悪さはしないが、気になるなら除外対象にする。  
+このあたりのファイルでJavaScriptを読み込ませておくなら、_Host.cshtmlとindex.html両方に書く必要がある。
 
 ### Startup/Programクラス
 
