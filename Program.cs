@@ -1,5 +1,7 @@
 #if SERVER_MODE
+using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 #else
 using Microsoft.AspNetCore.Blazor.Hosting;

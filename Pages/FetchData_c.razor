@@ -1,5 +1,6 @@
 ﻿@page "/fetchdata_c"
 
+
 <h1>Weather forecast</h1>
 
 <p>This component demonstrates fetching data from the server.</p>
@@ -38,7 +39,7 @@ else
 
 #if SERVER_MODE
     [Inject] 
-    public Microsoft.AspNetCore.Components.IUriHelper UriHelper {get; set;}
+    public Microsoft.AspNetCore.Components.NavigationManager UriHelper {get; set;}
     [Inject]
     IHttpClientFactory HttpClientFactory { get; set; }
     HttpClient Http {get;set;}
@@ -51,7 +52,7 @@ else
     {
 #if SERVER_MODE
         Http = HttpClientFactory.CreateClient();
-        Http.BaseAddress = new Uri(UriHelper.GetBaseUri());
+        Http.BaseAddress = new Uri(UriHelper.BaseUri);
 #endif
         forecasts = await Http.GetJsonAsync<WeatherForecast_C[]>("sample-data/weather.json");
     }
